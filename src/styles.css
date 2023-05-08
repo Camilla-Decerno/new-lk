@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* If you want to add your own default base styles for specific HTML elements,
+use the @layer directive to add those styles to Tailwind’s base layer */
+@layer base {
+  /* @font-face {
+    font-family: "OpenSans";
+    font-style: italic;
+    font-weight: 400;
+    src: url(./fonts/OpenSans-Italic.ttf) format("ttf");
+  }
+  @font-face {
+    font-family: "OpenSans";
+    font-style: normal;
+    font-weight: 600;
+    src: url(./fonts/OpenSans-SemiBold.ttf) format("ttf");
+  }
+  @font-face {
+    font-family: "RobotoSlab";
+    font-style: normal;
+    font-weight: 500;
+    src: url(./fonts/RobotoSlab-Medium.ttf) format("ttf");
+  }
+  @font-face {
+    font-family: "OpenSans";
+    font-style: normal;
+    font-weight: 400;
+    src: url(./fonts/OpenSans-Regular.ttf) format("ttf");
+  } */
+
+  h1 {
+    /* font-family: "OpenSans"; */
+    @apply text-h1 font-medium;
+  }
+
+  h2 {
+    @apply text-h2;
+  }
+
+  body {
+    @apply bg-beige-background;
+  }
+}
+
+/* Use the components layer for any more complicated classes you want to add to your
+project that you’d still like to be able to override with utility classes.
+Traditionally these would be classes like card, btn, badge — that kind of thing.*/
+
+/* // Won't work:
+.btn {
+  @apply block bg-red;
+  @apply md:inline-block;
+  @apply hover:bg-blue;
+}
+
+// Do this instead:
+.btn {
+  @apply block bg-red;
+}
+.btn:hover {
+  @apply bg-blue;
+}
+@screen md {
+  .btn {
+    @apply inline-block;
+  }
+} */
+
+@layer components {
+  .p12 {
+    @apply text-12 text-grey-darkTextAndIcon;
+  }
+
+  .p14 {
+    @apply text-14 text-grey-darkTextAndIcon;
+  }
+
+  .p14SemiBold {
+    @apply text-14 font-semibold text-grey-darkTextAndIcon;
+  }
+
+  .p14Italic {
+    @apply text-14 italic text-grey-darkTextAndIcon;
+  }
+
+  .p16SemiBold {
+    @apply text-16 font-semibold text-grey-darkTextAndIcon;
+  }
+
+  .link14 {
+    @apply text-14 font-normal text-blue-link underline;
+  }
+}
+
+/* Add any of your own custom utility classes to Tailwind’s utilities layer, ex:
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+   This can be useful when there’s a CSS feature you’d like to use in your project
+   that Tailwind doesn’t include utilities for out of the box. */
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* For IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}

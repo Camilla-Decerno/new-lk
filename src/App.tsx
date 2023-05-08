@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+/** React application entrypoint */
 
-function App() {
-  const [count, setCount] = useState(0)
+import React, { useState } from "react";
+import { SWRConfig } from "swr";
+import { AppRouter } from "./AppRouter";
+import { createAuthService, AuthProvider } from "./contexts/authContext";
+import { createSWROptions } from "./data/swr/createSWRConfig";
+
+export function App() {
+  const [authService] = useState(createAuthService());
+  const [swrOptions] = useState(
+    createSWROptions({
+      getAuthToken: () => {
+        const authState = authService.getState();
+        return authState.status === "valid" ? authState.token : null;
+      },
+    })
+  );
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className='bg-orange-primary'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <React.StrictMode>
+      <AuthProvider value={authService}>
+        <SWRConfig value={swrOptions}>
+          <AppRouter />
+        </SWRConfig>
+      </AuthProvider>
+    </React.StrictMode>
+  );
 }
-
-export default App
