@@ -1,12 +1,10 @@
-import * as React from "react";
-
 export interface IInputWithLabel {
   input: JSX.Element;
   labelText: string | JSX.Element;
 }
 
-export default function InputField(props: { elements: IInputWithLabel[] }) {
-  let elems: any = [];
+export default function InputContainer(props: { elements: IInputWithLabel[] }) {
+  const elems: any = [];
   props.elements.forEach((elem) => {
     elems.push(
       <>

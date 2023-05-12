@@ -1,4 +1,3 @@
-import React from "react";
 import { NotFoundView } from "../parts/common/NotFoundView";
 import { PageView } from "./PageView";
 

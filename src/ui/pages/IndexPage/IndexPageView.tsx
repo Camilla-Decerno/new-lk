@@ -1,14 +1,10 @@
-import React, { ReactElement } from "react";
-import { PageView } from "../PageView";
+import { ReactElement } from "react";
 
 interface Props {
-  header: ReactElement;
-  products: ReactElement;
+  page: ReactElement;
 }
-export function IndexPageView({ header, products }: Props) {
+export function IndexPageView({ page }: Props) {
   return (
-    <PageView header={header}>
-      {products}
-    </PageView>
+      {page}
   );
 }

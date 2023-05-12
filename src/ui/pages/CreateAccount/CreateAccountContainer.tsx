@@ -1,11 +1,10 @@
-import React from "react";
 import { PageHeaderContainer } from "../PageHeader/PageHeaderContainer";
-import { CreateUserAccountView } from "./CreateUserAccountView";
+import { CreateAccountView } from "./CreateAccountView";
 import { PageView } from "../PageView";
 
-export function CreateUserAccountContainer() {
+export function CreateAccountContainer() {
   const header = <PageHeaderContainer />;
-  const page = <CreateUserAccountView />;
+  const page = <CreateAccountView />;
 
   return <PageView header={header}>{page}</PageView>;
 }

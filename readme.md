@@ -55,12 +55,26 @@ In practice, this architecture leads to a render graph where the layers is still
 
 - [React](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html#get-started)
+- [Tailwind](https://tailwindcss.com/) as css framework
 - [SWR](https://swr.vercel.app/) for data fetching
 - [Wouter](https://github.com/molefrog/wouter) for routing
 - [Jest](https://jestjs.io/) as unit test runner
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for React component tests
-- [Parcel](https://parceljs.org/) for bundling and development runtime
+- [Vite](https://vitejs.dev/) for bundling and development runtime
+
 
 ## PoC
 
 - [DummyJSON](https://dummyjson.com/) to be able to interact with an API.
+
+## Tailwind
+
+- Rapid development with ready-to-use utility classes.
+- Reduced CSS file size for faster loading times.
+- Highly customizable to match project-specific design needs.
+- Consistent and cohesive design language.
+- Responsive design capabilities for different screen sizes.
+- Developer-friendly with meaningful class names and comprehensive documentation.
+- Active community and ecosystem with plugins and integrations.
+- Scalable for projects of any size.
+- Framework-agnostic, works well with any front-end framework or HTML projects.

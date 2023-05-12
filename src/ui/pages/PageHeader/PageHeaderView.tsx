@@ -1,25 +1,23 @@
-import React, { FC, ReactElement, useState } from "react";
-import { Link, navigate } from "wouter";
-import { Button, ButtonTypes } from "../../controls/buttons/button";
+import { useState } from "react";
+import { Link } from "wouter";
+import { Button, ButtonTypes } from "../../controls/buttons/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/pro-light-svg-icons";
-import MainMenuWrapper from "../../controls/menus/mainMenuWrapper";
+import MainMenu from "../../controls/menus/MainMenu";
+import { Routes } from "../../../AppRouter";
 
-interface Props {
-  homeLink: string;
-  userName: string | null;
-  SignInLink: FC<{ children: ReactElement }> | null;
-  onSignOut: (() => void) | null;
-}
-
-export function PageHeaderView({ homeLink, userName, SignInLink, onSignOut }: Props) {
+export function PageHeaderView() {
   const [showMenu, setShowMenu] = useState(false);
+
+  function toggleMenu() {
+    setShowMenu(!showMenu);
+  }
 
   return (
     <div
       id="header"
       className="flex flex-row justify-between h-14 items-center bg-white drop-shadow-sm -mx-3 px-5">
-      <Link to="/start">
+      <Link to={Routes.START}>
         <div className="cursor-pointer bg-no-repeat bg-contain w-44 h-7 bg-logo_lk_big"></div>
       </Link>
       <Button
@@ -30,8 +28,7 @@ export function PageHeaderView({ homeLink, userName, SignInLink, onSignOut }: Pr
         }}
         iconLeft={<FontAwesomeIcon icon={faBars} />}
       />
-      {showMenu && <MainMenuWrapper />}
-      {/* <MainMenu /> */}
+      {showMenu && <MainMenu showMainMenu={toggleMenu} />}
     </div>
   );
 }

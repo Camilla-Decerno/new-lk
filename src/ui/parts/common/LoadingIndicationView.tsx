@@ -1,5 +1,3 @@
-import React from "react";
-
 export function LoadingIndicationView() {
-  return <h1>Loading ...</h1>;
+  return <h1 className="flex w-full h-screen justify-center mt-32">Loading ...</h1>;
 }

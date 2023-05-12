@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, TouchEventHandler } from "react";
+import React from "react";
 import { twMerge } from "tailwind-merge";
 import { Link } from "wouter";
 
@@ -24,7 +24,7 @@ export interface ButtonProps {
 
 export function Button(props: ButtonProps) {
   const { type = ButtonTypes.PRIMARY, text, navigate = "#", iconLeft, iconRight, className: className = "", onClick = () => {} } = props;
-  let classes = twMerge(`flex justify-center items-center text-white py-3 rounded-button bg-white ${type} ${className}`);
+  const classes = twMerge(`flex justify-center items-center text-white py-3 rounded-button bg-white px-3 ${type} ${className}`);
 
   return (
     <Link

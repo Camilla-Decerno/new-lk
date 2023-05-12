@@ -1,11 +1,12 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import { faSignIn } from "@fortawesome/pro-light-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, ButtonTypes } from "../../../controls/buttons/button";
+import { Button, ButtonTypes } from "../../../controls/buttons/Button";
 import { useAuthState } from "../../../../contexts/authContext";
-import SideToSideButtons from "../../../containers/SideToSideButtons";
+import HorizontalButtonContainer from "../../../containers/SideToSideButtonContainer";
 import useLocation from "wouter/use-location";
-import InputField from "../../../containers/InputField";
+import InputContainer from "../../../containers/InputContainer";
+import { Routes } from "../../../../AppRouter";
 
 interface Props {
   header: ReactElement;
@@ -37,7 +38,7 @@ export function UserSignInView({ header, onSignIn }: Props) {
         className="flex flex-col">
         <h1 className="mb-12 font-bold text-center mt-7">Logga in med användarnamn och lösenord</h1>
 
-        <InputField
+        <InputContainer
           elements={[
             {
               labelText: "Användarnamn",
@@ -66,15 +67,15 @@ export function UserSignInView({ header, onSignIn }: Props) {
           ]}
         />
       </div>
-      <SideToSideButtons /*TODO: Borde dessa inehålla buttons helt? Innebär med propdrilling*/
-        button1={
+      <HorizontalButtonContainer /*TODO: Borde dessa inehålla buttons helt? Innebär med propdrilling*/
+        buttonLeft={
           <Button
             text="Tillbaka"
             type={ButtonTypes.SECONDARY}
-            navigate="/start"
+            navigate={Routes.START}
           />
         }
-        button2={
+        buttonRight={
           <Button
             text="Logga in"
             onClick={handleSignIn}

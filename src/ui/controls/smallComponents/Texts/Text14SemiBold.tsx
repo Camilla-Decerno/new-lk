@@ -6,6 +6,6 @@ export interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
   // ... your custom props here
 }
 
-export const P12: React.FunctionComponent<TextProps> = ({text, ...rest}) => {
-  return <p className="text-12 font-normal text-darkTextAndIcon" {...rest}>{text}</p>;
+export const Text14SemiBold: React.FunctionComponent<TextProps> = ({text, ...rest}) => {
+  return <p className="text-14 font-semibold text-darkTextAndIcon" {...rest}>{text}</p>;
 };

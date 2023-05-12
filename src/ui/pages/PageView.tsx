@@ -7,7 +7,7 @@ interface Props {
 
 export function PageView({ header, children }: Props) {
   return (
-    <div className="mx-3">
+    <div className="mx-3 h-screen">
       {header}
       {children}
     </div>

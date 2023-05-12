@@ -5,7 +5,7 @@
 /* If you want to add your own default base styles for specific HTML elements,
 use the @layer directive to add those styles to Tailwind’s base layer */
 @layer base {
-  /* @font-face {
+  @font-face {
     font-family: "OpenSans";
     font-style: italic;
     font-weight: 400;
@@ -28,15 +28,15 @@ use the @layer directive to add those styles to Tailwind’s base layer */
     font-style: normal;
     font-weight: 400;
     src: url(./fonts/OpenSans-Regular.ttf) format("ttf");
-  } */
+  }
 
   h1 {
     /* font-family: "OpenSans"; */
-    @apply text-h1 font-medium;
+    @apply text-h1 font-medium text-black font-serif;
   }
 
   h2 {
-    @apply text-h2;
+    @apply text-h2 font-serif;
   }
 
   body {

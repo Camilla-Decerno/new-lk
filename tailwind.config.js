@@ -7,6 +7,12 @@ import { screens } from "tailwindcss/defaultTheme";
 export const content = ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"];
 export const theme = {
   extend: {
+    fontFamily: {
+      sans: ["OpenSans", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", '"Segoe UI"', "Roboto", '"Helvetica Neue"', "Arial", '"Noto Sans"', "sans-serif", '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+      serif: ["ui-serif", "Georgia", "Cambria", '"Times New Roman"', "Times", "serif"],
+      roboto: ["RobotoSlab", "sans-serif"],
+      mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", '"Liberation Mono"', '"Courier New"', "monospace"],
+    },
     screens: {
       ...screens,
       tiny: { min: "0px", max: "370px" },
@@ -79,12 +85,13 @@ export const theme = {
       h1: ["1.375rem", { lineHeight: "1.813rem" }],
       h2: ["1.125rem", { lineHeight: "1.481rem" }],
       12: ["0.75rem", { lineHeight: "1.481rem" }],
-      14: ["0.85rem", { lineHeight: "1.481rem" }],
+      14: ["0.875rem", { lineHeight: "1.481rem" }],
       16: ["1rem", { lineHeight: "1.363rem" }],
       link: ["0.85rem", { lineHeight: "1.481rem" }],
     },
     spacing: {
       screen: "100vh",
+      7.5: "1.875rem",
     },
   },
 };

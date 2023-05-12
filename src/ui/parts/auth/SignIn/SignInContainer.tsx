@@ -1,4 +1,3 @@
-import React from "react";
 import { useAuthState, useSignIn } from "../../../../contexts/authContext";
 import { LoadingIndicationView } from "../../common/LoadingIndicationView";
 import { UserSignInView } from "./UserSignInView";
@@ -12,6 +11,7 @@ export function SignInContainer() {
   function handleSignIn(username: string, password: string) {
     onSignIn(username, password);
   }
+  
   if (authState.status !== "none") {
     return <LoadingIndicationView />;
   }
